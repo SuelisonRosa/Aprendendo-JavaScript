@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aeroporto</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>Entrada</h1>
+        País que você nasceu: <input type="text" name="input_país" id="input_país">
+        <input type="button" value="Verificar" onclick="nacionalidade()">
+        <div id="resultado"></div>
+    </main>
+    <script>
+        function nacionalidade() {
+            var input_país = document.getElementById("input_país")
+            var resultado = document.getElementById("resultado")
+            input_país = input_país.value.toUpperCase()
+            resultado.innerHTML = `<p>Vivendo em <strong>${input_país}</strong></p>`
+            if (input_país != 'BRASIL') {
+            resultado.innerHTML += `<p>Você é <strong>Estrangeiro(a)</strong></p>`
+        } else {
+            resultado.innerHTML += `<p>Você é <strong>Brasileiro(a)</strong></p>`
+        }
+        }   
+    </script>
+</body>
+</html>
